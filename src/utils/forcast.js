@@ -13,7 +13,9 @@ const forecast = (long,lat,callback)=>{
             callback(undefined,{
                 temp : response.body.main.temp,
                 location : response.body.name,
-                desc : response.body.weather[0].description
+                desc : response.body.weather[0].description,
+                max : response.body.main.temp_max,
+                min : response.body.main.temp_min
             })
         }
     })

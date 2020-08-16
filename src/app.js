@@ -60,11 +60,13 @@ app.get('/weather',(req,res)=>{
                 return res.send({error})
             }
             
-            result = ('the Qurrent temperature for     ' + forecastdata.location + '     is     ' + forecastdata.temp + ' Celsius   And the weather description is ' + forecastdata.desc)
+            result = ('The qurrent temperature for     ' + forecastdata.location + '     is     ' + forecastdata.temp + ' Celsius   And the weather description is ' + forecastdata.desc)
             res.send({
                 location : data.location,
                 address : req.query.address,
-                forecast : result
+                forecast : result,
+                min : 'The minimum temperature : ' + forecastdata.min + ' C',
+                max : 'The maximum temperature : ' + forecastdata.max + ' C'
             })
         })
     
